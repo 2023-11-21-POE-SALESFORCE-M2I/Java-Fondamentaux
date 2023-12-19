@@ -29,6 +29,11 @@ class Compte {
         return "Proprietaire : " + this.proprietaire + " - solde : " + this.solde;
     }
     
+    @Override
+    public String toString() {
+        return "Proprietaire : " + this.proprietaire + " - solde : " + this.solde;
+    }
+        
     // Setters
     public void setProprietaire(String proprietaire) {
         this.proprietaire = proprietaire;
@@ -66,6 +71,11 @@ class CompteBancaire extends Compte {
     public String getElements() {
         return super.getElements() + " - Nom de la banque : " + this.nomBanque;
     }
+
+    @Override
+    public String toString() {
+        return super.getElements() + " - Nom de la banque : " + this.nomBanque;
+    }
     
     // Setters
     public void setNomBanque(String nomBanque) {
@@ -84,5 +94,10 @@ public class Heritage {
         
         System.out.println(c.getElements());
         System.out.println(cb.getElements());
+
+        // Avec la redefinition de la methode toString,
+        // on peut afficher sans appeler explicitement la methode
+        System.out.println(c);
+        System.out.println(cb);        
     }
 }
